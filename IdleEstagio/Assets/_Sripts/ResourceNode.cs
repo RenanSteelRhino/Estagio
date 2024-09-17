@@ -11,20 +11,19 @@ public class ResourceNode : MonoBehaviour
         //+1 recurso para o tipo selecionado
         switch (type)
         {
-            case ResourcesTypes.Types.agua:
-                OnResourceGained.Invoke(ResourcesTypes.Types.agua);
+            case ResourcesTypes.Types.gold:
+                OnResourceGained.Invoke(ResourcesTypes.Types.gold);
                 break;
             
-            case ResourcesTypes.Types.carne:
-                OnResourceGained.Invoke(ResourcesTypes.Types.carne);
+            case ResourcesTypes.Types.food:
+                OnResourceGained.Invoke(ResourcesTypes.Types.food);
                 break;
             
-            case ResourcesTypes.Types.madeira:
-                Debug.Log("+1 madeira");
+            case ResourcesTypes.Types.buildingMaterial:
+                OnResourceGained.Invoke(ResourcesTypes.Types.buildingMaterial);
                 break;
-
-            case ResourcesTypes.Types.pedra:
-                Debug.Log("+1 pedra");
+            case ResourcesTypes.Types.ore:
+                OnResourceGained.Invoke(ResourcesTypes.Types.ore);
                 break;
 
             default:

@@ -1,4 +1,4 @@
 public class ResourcesTypes
 {
-    public enum Types {agua, carne, pedra, madeira}
+    public enum Types {gold, food, buildingMaterial, ore}
 }
