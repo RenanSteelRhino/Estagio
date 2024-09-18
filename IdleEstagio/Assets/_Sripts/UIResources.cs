@@ -24,11 +24,11 @@ public class UIResources : MonoBehaviour
                 break;
             case ResourcesTypes.Types.food:
                 Debug.Log("+1 Food");
-                foodText.text = CurrencyManager.Instance.food.ToString();
+                // foodText.text = CurrencyManager.Instance.food.ToString();
                 break;
             case ResourcesTypes.Types.buildingMaterial:
                 Debug.Log("+1 Building Material");
-                buildingMaterialText.text = CurrencyManager.Instance.buildingMaterial.ToString();
+                // buildingMaterialText.text = CurrencyManager.Instance.buildingMaterial.ToString();
                 break;
             case ResourcesTypes.Types.ore:
                 Debug.Log("+1 ore");
