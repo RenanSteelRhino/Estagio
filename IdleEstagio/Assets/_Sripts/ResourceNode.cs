@@ -1,16 +1,24 @@
 using System;
 using System.Collections.Generic;
 using Cainos.LucidEditor;
+using DG.Tweening;
 using UnityEngine;
 
 public class ResourceNode : MonoBehaviour
 {
     public ResourcesTypes.Types type;
     public static event Action<ResourcesTypes.Types> OnResourceGained;
+    public Vector3 nomalScale;
+    public Vector3 bigScale;
     
     private void OnMouseDown()
     {
-        //+1 recurso para o tipo selecionado
+
+        transform.DOScale(bigScale, 0.05f).OnComplete( ()=> 
+        {
+            transform.DOScale(nomalScale, 0.05f);
+        });
+        
         switch (type)
         {
             case ResourcesTypes.Types.gold:
