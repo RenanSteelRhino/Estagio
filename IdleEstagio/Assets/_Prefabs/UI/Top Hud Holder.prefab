@@ -190,6 +190,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 154376790302767382}
     m_Modifications:
+    - target: {fileID: 1223316021183189673, guid: e0e926acca23dfc43b23babc45e283a0, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: edcbd57032ccbd44e9f228cdd323ab50, type: 3}
     - target: {fileID: 2343357697597804988, guid: e0e926acca23dfc43b23babc45e283a0, type: 3}
       propertyPath: m_Name
       value: Resource Text Holder (3)
@@ -220,11 +224,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6235593848013247695, guid: e0e926acca23dfc43b23babc45e283a0, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 268.9
+      value: 480
       objectReference: {fileID: 0}
     - target: {fileID: 6235593848013247695, guid: e0e926acca23dfc43b23babc45e283a0, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 217.8
+      value: 179
       objectReference: {fileID: 0}
     - target: {fileID: 6235593848013247695, guid: e0e926acca23dfc43b23babc45e283a0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -274,6 +278,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8485600793195935882, guid: e0e926acca23dfc43b23babc45e283a0, type: 3}
+      propertyPath: m_Name
+      value: OreText
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -295,7 +303,7 @@ PrefabInstance:
     - target: {fileID: 1223316021183189673, guid: e0e926acca23dfc43b23babc45e283a0, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300176, guid: 7810966f0f690954c87305933cabf2b0, type: 3}
+      objectReference: {fileID: 21300000, guid: e7c99e51af2e30a48800fe40e5052841, type: 3}
     - target: {fileID: 2343357697597804988, guid: e0e926acca23dfc43b23babc45e283a0, type: 3}
       propertyPath: m_Name
       value: Resource Text Holder
@@ -326,11 +334,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6235593848013247695, guid: e0e926acca23dfc43b23babc45e283a0, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 268.9
+      value: 480
       objectReference: {fileID: 0}
     - target: {fileID: 6235593848013247695, guid: e0e926acca23dfc43b23babc45e283a0, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 217.8
+      value: 179
       objectReference: {fileID: 0}
     - target: {fileID: 6235593848013247695, guid: e0e926acca23dfc43b23babc45e283a0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -380,6 +388,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8485600793195935882, guid: e0e926acca23dfc43b23babc45e283a0, type: 3}
+      propertyPath: m_Name
+      value: GoldText
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -398,6 +410,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 154376790302767382}
     m_Modifications:
+    - target: {fileID: 1223316021183189673, guid: e0e926acca23dfc43b23babc45e283a0, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ee34791406b8efd4297b374fc2d168b1, type: 3}
     - target: {fileID: 2343357697597804988, guid: e0e926acca23dfc43b23babc45e283a0, type: 3}
       propertyPath: m_Name
       value: Resource Text Holder (1)
@@ -428,11 +444,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6235593848013247695, guid: e0e926acca23dfc43b23babc45e283a0, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 268.9
+      value: 480
       objectReference: {fileID: 0}
     - target: {fileID: 6235593848013247695, guid: e0e926acca23dfc43b23babc45e283a0, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 217.8
+      value: 179
       objectReference: {fileID: 0}
     - target: {fileID: 6235593848013247695, guid: e0e926acca23dfc43b23babc45e283a0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -481,6 +497,10 @@ PrefabInstance:
     - target: {fileID: 6235593848013247695, guid: e0e926acca23dfc43b23babc45e283a0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8485600793195935882, guid: e0e926acca23dfc43b23babc45e283a0, type: 3}
+      propertyPath: m_Name
+      value: MaterialText
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -530,11 +550,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6235593848013247695, guid: e0e926acca23dfc43b23babc45e283a0, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 268.9
+      value: 480
       objectReference: {fileID: 0}
     - target: {fileID: 6235593848013247695, guid: e0e926acca23dfc43b23babc45e283a0, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 217.8
+      value: 179
       objectReference: {fileID: 0}
     - target: {fileID: 6235593848013247695, guid: e0e926acca23dfc43b23babc45e283a0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -583,6 +603,10 @@ PrefabInstance:
     - target: {fileID: 6235593848013247695, guid: e0e926acca23dfc43b23babc45e283a0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8485600793195935882, guid: e0e926acca23dfc43b23babc45e283a0, type: 3}
+      propertyPath: m_Name
+      value: FoodText
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
