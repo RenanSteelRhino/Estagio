@@ -25,6 +25,7 @@ public class ResourceNode : MonoBehaviour
                 OnResourceGained.Invoke(ResourcesTypes.Types.buildingMaterial);
 
                 ResourceNodeLevels.instance.currentForestryLevel++;
+                ResourceNodeLevels.instance.currentQuaryLevel++;
                 NodeVisualManager.instance.UpdateVisual(type);
 
                 break;

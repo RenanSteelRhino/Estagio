@@ -11,7 +11,9 @@ public class NodeVisualManager : MonoBehaviour
 
     [Header("Levels & Milestones")]
     public int forestryMilestone = 10;
+    public int quaryMilestone = 10;
     public int forestryVisualLevel;
+    public int quaryVisualLevel;
     [Space][Space][Space][Space]
 
 
@@ -42,7 +44,19 @@ public class NodeVisualManager : MonoBehaviour
                     else
                         forestryVisuals[forestryVisuals.Count-1].SetActive(true);
                 }
+                if(ResourceNodeLevels.instance.currentQuaryLevel % quaryMilestone == 0)
+                {
+                    quaryVisualLevel++;
+                    for (int i = 0; i < quaryVisuals.Count; i++)
+                        quaryVisuals[i].SetActive(false);
+
+                    if (quaryVisualLevel < quaryVisuals.Count)
+                        quaryVisuals[quaryVisualLevel].SetActive(true);
+                    else
+                        quaryVisuals[quaryVisuals.Count-1].SetActive(true);
+                }
             break;
+
         }
     }
 }
