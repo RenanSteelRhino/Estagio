@@ -7,38 +7,38 @@ using UnityEngine;
 public class ResourceNode : MonoBehaviour
 {
     public ResourcesTypes.Types type;
-    public static event Action<ResourcesTypes.Types> OnResourceGained;
-    public Vector3 nomalScale;
-    public Vector3 bigScale;
+    public static event Action<ResourcesTypes.Types> OnResourceGained;  // Evento estático que será invocado quando um recurso for coletado
+    public Vector3 nomalScale;  // Escala normal do objeto
+    public Vector3 bigScale;    // Escala maior usada para efeito de clique
     
-    private void OnMouseDown()
+    private void OnMouseDown()   // Método chamado quando o objeto é clicado
     {
 
-        transform.DOScale(bigScale, 0.05f).OnComplete( ()=> 
+        transform.DOScale(bigScale, 0.05f).OnComplete( ()=>     // Animação para aumentar e depois retornar à escala normal
         {
-            transform.DOScale(nomalScale, 0.05f);
+            transform.DOScale(nomalScale, 0.05f);   // Retorna à escala original após o aumento
         });
         
         switch (type)
         {
             case ResourcesTypes.Types.gold:
-                OnResourceGained.Invoke(ResourcesTypes.Types.gold);
+                OnResourceGained.Invoke(ResourcesTypes.Types.gold); // Dispara o evento indicando que ouro foi coletado
                 break;
             
             case ResourcesTypes.Types.food:
-                OnResourceGained.Invoke(ResourcesTypes.Types.food);
+                OnResourceGained.Invoke(ResourcesTypes.Types.food); // Dispara o evento indicando que comida foi coletada
                 break;
             
             case ResourcesTypes.Types.buildingMaterial:
-                OnResourceGained.Invoke(ResourcesTypes.Types.buildingMaterial);
+                OnResourceGained.Invoke(ResourcesTypes.Types.buildingMaterial); // Dispara o evento indicando que material de construção foi coletado
 
-                ResourceNodeLevels.instance.currentForestryLevel++;
+                ResourceNodeLevels.instance.currentForestryLevel++; // Incrementa o nível de "forestry" e "quary"
                 ResourceNodeLevels.instance.currentQuaryLevel++;
                 NodeVisualManager.instance.UpdateVisual(type);
 
                 break;
             case ResourcesTypes.Types.ore:
-                OnResourceGained.Invoke(ResourcesTypes.Types.ore);
+                OnResourceGained.Invoke(ResourcesTypes.Types.ore);  // Dispara o evento indicando que minério foi coletado
                 break;
 
             default:

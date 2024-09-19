@@ -4,27 +4,27 @@ using DG.Tweening;
 
 public class FloatingTextManager : MonoBehaviour
 {
-    public List<GameObject> floatingPrefabs = new List<GameObject>();
-    public Queue<GameObject> floatingQueue = new Queue<GameObject>();
+    public List<GameObject> floatingPrefabs = new List<GameObject>();   // Lista de prefabs para os textos flutuantes que serão usados //
+    public Queue<GameObject> floatingQueue = new Queue<GameObject>();    // Fila que armazena os objetos de texto flutuante //
 
     private void Awake() 
     {
-        ResourceNode.OnResourceGained += SpawnFloatingText;
+        ResourceNode.OnResourceGained += SpawnFloatingText;        //sempre que o evento OnResourceGained for disparado, o método SpawnFloatingText será chamado //
 
-        //Popula a fila / pool
-        for (int i = 0; i < floatingPrefabs.Count; i++)
+        
+        for (int i = 0; i < floatingPrefabs.Count; i++)     // Popula a fila de objetos de texto flutuante //
         {
-            GameObject obj = GameObject.Instantiate(floatingPrefabs[i]);
-            floatingQueue.Enqueue(obj);
+            GameObject obj = GameObject.Instantiate(floatingPrefabs[i]);    
+            floatingQueue.Enqueue(obj);          // Cria uma instância do prefab e o armazena na fila para reutilização. //
         }
     }
 
-    private void SpawnFloatingText(ResourcesTypes.Types types)
+    private void SpawnFloatingText(ResourcesTypes.Types types)      // Método responsável por exibir o texto flutuante quando um recurso for coletado //
     {
 
-        //Tira o texto da fila
+        // Remove o primeiro objeto de texto flutuante da fila para reutilizá-lo //
         GameObject textObject = floatingQueue.Dequeue();
-        textObject.SetActive(true);
+        textObject.SetActive(true);     // Ativa o objeto para ser exibido. //
 
         //Pego a posição do click
         Vector2 mousePos = Input.mousePosition;
@@ -37,9 +37,9 @@ public class FloatingTextManager : MonoBehaviour
 
         textObject.transform.DOMoveY(textObject.transform.position.y + 1, 1).OnComplete( ()=> 
         {
-            textObject.SetActive(false);
-            //Devolve o texto na fila
-            floatingQueue.Enqueue(textObject);
+            textObject.SetActive(false);    // Desativa o texto após a animação terminar//
+            
+            floatingQueue.Enqueue(textObject);  // Devolve o objeto de volta à fila para ser reutilizado futuramente //
         });
         
     }

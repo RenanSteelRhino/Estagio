@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class ResourceNodeLevels : MonoBehaviour
 {
-    public static ResourceNodeLevels instance;
-    public int currentForestryLevel;
-    public int currentQuaryLevel;
-    public int currentOreMineLevel;
-    public int currentHuntCabinLevel;
+    public static ResourceNodeLevels instance;  // acesso global à classe //
+    public int currentForestryLevel;    // Nível atual do recurso
+    public int currentQuaryLevel;   // Nível atual do recurso
+    public int currentOreMineLevel; // Nível atual do recurso
+    public int currentHuntCabinLevel;   // Nível atual do recurso
     
     private void Awake() 
     {
