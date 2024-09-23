@@ -16,6 +16,7 @@ public class FloatingTextManager : MonoBehaviour
         {
             GameObject obj = GameObject.Instantiate(floatingPrefabs[i]);    
             floatingQueue.Enqueue(obj);          // Cria uma instância do prefab e o armazena na fila para reutilização. //
+            obj.SetActive(false);
         }
     }
 
