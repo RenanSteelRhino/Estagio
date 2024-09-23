@@ -12,4 +12,15 @@ public class ResourceNodeLevels : MonoBehaviour
     {
         instance = this;
     }
+
+    public void IncreaseNodeLevel(ResourcesTypes.NodeSpecificType type)
+    {
+        switch (type)
+        {
+            case ResourcesTypes.NodeSpecificType.wood:
+                currentForestryLevel++;
+                NodeVisualManager.instance.UpdateVisual(ResourcesTypes.Types.buildingMaterial);
+            break;
+        }
+    }
 }

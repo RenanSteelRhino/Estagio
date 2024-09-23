@@ -23,7 +23,13 @@ public class FloatingTextManager : MonoBehaviour
     {
 
         // Remove o primeiro objeto de texto flutuante da fila para reutilizá-lo //
-        GameObject textObject = floatingQueue.Dequeue();
+        GameObject textObject;
+
+        if(floatingQueue.Count == 0)
+            textObject = Instantiate(floatingPrefabs[0]);
+        else
+            textObject = floatingQueue.Dequeue();
+
         textObject.SetActive(true);     // Ativa o objeto para ser exibido. //
 
         //Pego a posição do click
