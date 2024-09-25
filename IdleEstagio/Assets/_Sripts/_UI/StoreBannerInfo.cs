@@ -7,6 +7,7 @@ public class StoreBannerInfo : MonoBehaviour
     [SerializeField] private TextMeshProUGUI description;
     [SerializeField] private TextMeshProUGUI valueText;
     [SerializeField] private Image icon;
+    [SerializeField] private Button buyButton;
 
     public TextMeshProUGUI ReturnDescription()
     {
@@ -16,5 +17,10 @@ public class StoreBannerInfo : MonoBehaviour
     public TextMeshProUGUI ReturnButtonText()
     {
         return valueText;
+    }
+
+    public Button ReturnBuyButton()
+    {
+        return buyButton;
     }
 }

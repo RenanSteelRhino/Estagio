@@ -10,7 +10,6 @@ public class ResourceStoreManager : MonoBehaviour
     public static ResourceStoreManager instance;
 
     [Header("=== UI ===")]
-    public Button forestryUpgradeButton;
     public Button ButtonExit;
     public Button ButtonOpenStore;
     public GameObject Store;
@@ -22,7 +21,6 @@ public class ResourceStoreManager : MonoBehaviour
     private void Awake() 
     {
         instance = this;
-        forestryUpgradeButton.onClick.AddListener(OnForestryClicked);
 
         ButtonExit?.onClick.AddListener(OnExit);
         ButtonOpenStore?.onClick.AddListener(OnOpen);
@@ -31,6 +29,17 @@ public class ResourceStoreManager : MonoBehaviour
         for (int i = 0; i < upgradesInStore.Count; i++)
         {
             upgradesInStore[i].UpdateUI();
+            InitializeButton(upgradesInStore[i].uiInfo.ReturnBuyButton(), upgradesInStore[i].basedOnType);
+        }
+    }
+
+    private void InitializeButton(Button btn, NodeSpecificType type)
+    {
+        switch(type)
+        {
+            case NodeSpecificType.wood:
+                btn.onClick.AddListener(OnForestryClicked);
+            break;
         }
     }
 

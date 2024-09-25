@@ -25,7 +25,7 @@ public class FloatingTextManager : MonoBehaviour
         }
     }
 
-    public void SpawnFloatingText(ResourcesTypes.Types types, float amount)      // Método responsável por exibir o texto flutuante quando um recurso for coletado //
+    public void SpawnFloatingText(NodeGlobalTypes types, float amount)      // Método responsável por exibir o texto flutuante quando um recurso for coletado //
     {
 
         // Remove o primeiro objeto de texto flutuante da fila para reutilizá-lo //

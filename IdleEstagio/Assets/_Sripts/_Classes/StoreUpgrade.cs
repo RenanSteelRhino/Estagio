@@ -6,10 +6,11 @@ public class StoreUpgrade
 {
     public string newName;
     public float baseValue;
-    public ResourcesTypes.Types type;
+    public NodeGlobalTypes type;
     public float multiplier = 1.07f;
     public int level;
     public StoreBannerInfo uiInfo;
+    public NodeSpecificType basedOnType;
 
     public void UpdateUI()
     {
@@ -29,7 +30,7 @@ public class StoreUpgrade
             level++;
             UpdateUI();
             UIResources.instance.UpdateTextInfo();
-            NodeVisualManager.instance.UpdateVisual(ResourcesTypes.Types.buildingMaterial);
+            NodeVisualManager.instance.UpdateVisual(NodeGlobalTypes.buildingMaterial);
         }
     }
 }

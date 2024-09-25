@@ -2061,11 +2061,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8862762303971228016, guid: baf89b8b369c27b4e8695ad6a1633110, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -112
+      value: -328
       objectReference: {fileID: 0}
     - target: {fileID: 8862762303971228016, guid: baf89b8b369c27b4e8695ad6a1633110, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 987
+      value: 811
       objectReference: {fileID: 0}
     - target: {fileID: 8862762303971228016, guid: baf89b8b369c27b4e8695ad6a1633110, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2127,7 +2127,6 @@ GameObject:
   - component: {fileID: 1475496140}
   - component: {fileID: 1475496142}
   - component: {fileID: 1475496141}
-  - component: {fileID: 1475496143}
   - component: {fileID: 1475496144}
   - component: {fileID: 1475496145}
   m_Layer: 0
@@ -2191,22 +2190,6 @@ MonoBehaviour:
   food: 0
   buildingMaterial: 0
   ore: 0
---- !u!114 &1475496143
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1475496139}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4be45adec62bf874c8df71175b97a8b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentForestryLevel: 1
-  currentQuaryLevel: 1
-  currentOreMineLevel: 1
-  currentHuntCabinLevel: 1
 --- !u!114 &1475496144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2237,7 +2220,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 331b49e94c97a9743842ec05fb4138e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forestryUpgradeButton: {fileID: 1694443220}
   ButtonExit: {fileID: 0}
   ButtonOpenStore: {fileID: 0}
   Store: {fileID: 0}
@@ -2248,18 +2230,7 @@ MonoBehaviour:
     multiplier: 1.07
     level: 0
     uiInfo: {fileID: 1620481853}
-  - newName: Hunt Cabin
-    baseValue: 10
-    type: 2
-    multiplier: 1.07
-    level: 0
-    uiInfo: {fileID: 1620481853}
-  - newName: Quary
-    baseValue: 10
-    type: 2
-    multiplier: 1.07
-    level: 0
-    uiInfo: {fileID: 1620481853}
+    basedOnType: 0
 --- !u!1 &1531623713
 GameObject:
   m_ObjectHideFlags: 0
@@ -2424,17 +2395,6 @@ Transform:
   - {fileID: 1291603035}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1694443220 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6601084787217405249, guid: baf89b8b369c27b4e8695ad6a1633110, type: 3}
-  m_PrefabInstance: {fileID: 1419403645}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -6,8 +6,8 @@ using UnityEngine;
 
 public class ResourceNode : MonoBehaviour
 {
-    public ResourcesTypes.Types type;
-    public static event Action<ResourcesTypes.Types> OnResourceGained;  // Evento estático que será invocado quando um recurso for coletado
+    public NodeGlobalTypes type;
+    public static event Action<NodeGlobalTypes> OnResourceGained;  // Evento estático que será invocado quando um recurso for coletado
     public Vector3 nomalScale;  // Escala normal do objeto
     public Vector3 bigScale;    // Escala maior usada para efeito de clique
 
@@ -21,24 +21,24 @@ public class ResourceNode : MonoBehaviour
         
         switch (type)
         {
-            case ResourcesTypes.Types.gold:
-                OnResourceGained.Invoke(ResourcesTypes.Types.gold); // Dispara o evento indicando que ouro foi coletado
+            case NodeGlobalTypes.gold:
+                OnResourceGained.Invoke(NodeGlobalTypes.gold); // Dispara o evento indicando que ouro foi coletado
                 break;
             
-            case ResourcesTypes.Types.food:
-                OnResourceGained.Invoke(ResourcesTypes.Types.food); // Dispara o evento indicando que comida foi coletada
+            case NodeGlobalTypes.food:
+                OnResourceGained.Invoke(NodeGlobalTypes.food); // Dispara o evento indicando que comida foi coletada
                 break;
             
-            case ResourcesTypes.Types.buildingMaterial:
-                OnResourceGained.Invoke(ResourcesTypes.Types.buildingMaterial); // Dispara o evento indicando que material de construção foi coletado
+            case NodeGlobalTypes.buildingMaterial:
+                OnResourceGained.Invoke(NodeGlobalTypes.buildingMaterial); // Dispara o evento indicando que material de construção foi coletado
 
                 // ResourceNodeLevels.instance.currentForestryLevel++; // Incrementa o nível de "forestry" e "quary"
                 // ResourceNodeLevels.instance.currentQuaryLevel++;
                 // NodeVisualManager.instance.UpdateVisual(type);
 
                 break;
-            case ResourcesTypes.Types.ore:
-                OnResourceGained.Invoke(ResourcesTypes.Types.ore);  // Dispara o evento indicando que minério foi coletado
+            case NodeGlobalTypes.ore:
+                OnResourceGained.Invoke(NodeGlobalTypes.ore);  // Dispara o evento indicando que minério foi coletado
                 break;
 
             default:

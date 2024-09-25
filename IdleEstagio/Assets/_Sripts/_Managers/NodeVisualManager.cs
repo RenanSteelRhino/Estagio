@@ -28,11 +28,11 @@ public class NodeVisualManager : MonoBehaviour
     public List<GameObject> oreMineVisuals = new List<GameObject>();    // Lista de representações visuais de "ore mine" //
 
 
-    public void UpdateVisual(ResourcesTypes.Types types)    // Método para atualizar a aparência visual //
+    public void UpdateVisual(NodeGlobalTypes types)    // Método para atualizar a aparência visual //
     {
         switch (types)
         {
-            case ResourcesTypes.Types.buildingMaterial:
+            case NodeGlobalTypes.buildingMaterial:
 
                 if(ResourceStoreManager.instance.upgradesInStore.Where(item => item.newName == "Forestry").LastOrDefault().level % forestryMilestone == 0)   // Verifica se o nível atual de "forestry" atingiu o marco para mudar //
                 {
