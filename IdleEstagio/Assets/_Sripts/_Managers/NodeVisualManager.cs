@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class NodeVisualManager : MonoBehaviour
 {
@@ -31,19 +32,19 @@ public class NodeVisualManager : MonoBehaviour
     {
         switch (types)
         {
-            // case ResourcesTypes.Types.buildingMaterial:
+            case ResourcesTypes.Types.buildingMaterial:
 
-            //     if(ResourceNodeLevels.instance.currentForestryLevel % forestryMilestone == 0)   // Verifica se o nível atual de "forestry" atingiu o marco para mudar //
-            //     {
-            //         forestryVisualLevel++;
-            //         for (int i = 0; i < forestryVisuals.Count; i++)
-            //             forestryVisuals[i].SetActive(false);    // Desativa todos os objetos visuais da lista //
+                if(ResourceStoreManager.instance.upgradesInStore.Where(item => item.newName == "Forestry").LastOrDefault().level % forestryMilestone == 0)   // Verifica se o nível atual de "forestry" atingiu o marco para mudar //
+                {
+                    forestryVisualLevel++;
+                    for (int i = 0; i < forestryVisuals.Count; i++)
+                        forestryVisuals[i].SetActive(false);    // Desativa todos os objetos visuais da lista //
 
-            //         if (forestryVisualLevel < forestryVisuals.Count)        // Ativa o objeto visual correspondente ao nível atual //
-            //             forestryVisuals[forestryVisualLevel].SetActive(true);
-            //         else
-            //             forestryVisuals[forestryVisuals.Count-1].SetActive(true);   // Se o nível for maior que a quantidade de visuais, ativa o último //
-            //     }
+                    if (forestryVisualLevel < forestryVisuals.Count)        // Ativa o objeto visual correspondente ao nível atual //
+                        forestryVisuals[forestryVisualLevel].SetActive(true);
+                    else
+                        forestryVisuals[forestryVisuals.Count-1].SetActive(true);   // Se o nível for maior que a quantidade de visuais, ativa o último //
+                }
             //     if(ResourceNodeLevels.instance.currentQuaryLevel % quaryMilestone == 0) // Verifica se o nível atual de "quary" atingiu o marco para mudar //
             //     {
             //         quaryVisualLevel++;
@@ -55,7 +56,7 @@ public class NodeVisualManager : MonoBehaviour
             //         else
             //             quaryVisuals[quaryVisuals.Count-1].SetActive(true); // Se o nível for maior que a quantidade de visuais, ativa o último //
             //     }
-            // break;
+            break;
 
         }
     }

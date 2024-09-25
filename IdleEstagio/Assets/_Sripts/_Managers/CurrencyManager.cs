@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using System.Linq;
+using UnityEditor.PackageManager;
 
 public class CurrencyManager : MonoBehaviour
 {
@@ -69,6 +71,7 @@ public class CurrencyManager : MonoBehaviour
 
     private void UpdateCounts(ResourcesTypes.Types types)
     {
+        float SpawnAmount = 1;
         switch (types)
         {
             case ResourcesTypes.Types.gold:
@@ -78,15 +81,14 @@ public class CurrencyManager : MonoBehaviour
             food++;                             // Incrementa o contador de Comida //
             break;
             case ResourcesTypes.Types.buildingMaterial:
-            buildingMaterial++;
-            // Qual o nivel do upgrade?
-            // Building material += 1 + NivelDoUpgrade
+            SpawnAmount = 1 + ResourceStoreManager.instance.upgradesInStore.Where(item => item.newName == "Forestry").LastOrDefault().level;
+            buildingMaterial += SpawnAmount;
             break;
             case ResourcesTypes.Types.ore:
             ore++;                              // Incrementa o contador de Minerio //
             break;
         }
-
+        FloatingTextManager.Instance.SpawnFloatingText(types, SpawnAmount);
         UIResources.instance.UpdateTextInfo();
     }
 }

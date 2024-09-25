@@ -13,7 +13,7 @@ public class StoreUpgrade
 
     public void UpdateUI()
     {
-        uiInfo.ReturnDescription().text = "Lvl: " + level + " -> " + level+1;
+        uiInfo.ReturnDescription().text = $"Lvl: {level} -> {level+1} ";
         uiInfo.ReturnButtonText().text = GetLevelCost().ToString("F2");
     }
 

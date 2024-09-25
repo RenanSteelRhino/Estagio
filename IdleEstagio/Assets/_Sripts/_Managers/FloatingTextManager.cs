@@ -1,15 +1,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using Unity.VisualScripting;
+using UnityEngine.UI;
+using TMPro;
 
 public class FloatingTextManager : MonoBehaviour
 {
+    public static FloatingTextManager Instance;
     public List<GameObject> floatingPrefabs = new List<GameObject>();   // Lista de prefabs para os textos flutuantes que serão usados //
     public Queue<GameObject> floatingQueue = new Queue<GameObject>();    // Fila que armazena os objetos de texto flutuante //
 
     private void Awake() 
     {
-        ResourceNode.OnResourceGained += SpawnFloatingText;        //sempre que o evento OnResourceGained for disparado, o método SpawnFloatingText será chamado //
+        Instance = this;
+       // ResourceNode.OnResourceGained += SpawnFloatingText;        //sempre que o evento OnResourceGained for disparado, o método SpawnFloatingText será chamado //
 
         
         for (int i = 0; i < floatingPrefabs.Count; i++)     // Popula a fila de objetos de texto flutuante //
@@ -20,7 +25,7 @@ public class FloatingTextManager : MonoBehaviour
         }
     }
 
-    private void SpawnFloatingText(ResourcesTypes.Types types)      // Método responsável por exibir o texto flutuante quando um recurso for coletado //
+    public void SpawnFloatingText(ResourcesTypes.Types types, float amount)      // Método responsável por exibir o texto flutuante quando um recurso for coletado //
     {
 
         // Remove o primeiro objeto de texto flutuante da fila para reutilizá-lo //
@@ -31,6 +36,8 @@ public class FloatingTextManager : MonoBehaviour
         else
             textObject = floatingQueue.Dequeue();
 
+        
+        textObject.GetComponentInChildren<TextMeshProUGUI>().text = "+" + amount.ToString();
         textObject.SetActive(true);     // Ativa o objeto para ser exibido. //
 
         //Pego a posição do click
