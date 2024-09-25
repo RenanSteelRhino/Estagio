@@ -2061,11 +2061,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8862762303971228016, guid: baf89b8b369c27b4e8695ad6a1633110, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: -112
       objectReference: {fileID: 0}
     - target: {fileID: 8862762303971228016, guid: baf89b8b369c27b4e8695ad6a1633110, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1019
+      value: 987
       objectReference: {fileID: 0}
     - target: {fileID: 8862762303971228016, guid: baf89b8b369c27b4e8695ad6a1633110, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2238,6 +2238,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   forestryUpgradeButton: {fileID: 1694443220}
+  ButtonExit: {fileID: 0}
+  ButtonOpenStore: {fileID: 0}
+  Store: {fileID: 0}
+  upgradesInStore:
+  - newName: Forestry
+    baseValue: 10
+    type: 2
+    multiplier: 1.07
+    level: 0
+    uiInfo: {fileID: 1620481853}
+  - newName: Hunt Cabin
+    baseValue: 10
+    type: 2
+    multiplier: 1.07
+    level: 0
+    uiInfo: {fileID: 1620481853}
+  - newName: Quary
+    baseValue: 10
+    type: 2
+    multiplier: 1.07
+    level: 0
+    uiInfo: {fileID: 1620481853}
 --- !u!1 &1531623713
 GameObject:
   m_ObjectHideFlags: 0
@@ -2346,6 +2368,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8862762303971228016, guid: baf89b8b369c27b4e8695ad6a1633110, type: 3}
   m_PrefabInstance: {fileID: 1419403645}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1620481853 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8285043901724700589, guid: baf89b8b369c27b4e8695ad6a1633110, type: 3}
+  m_PrefabInstance: {fileID: 1419403645}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 499fbe7769700cc4c8aa7bb1d09c516e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1667491694
 GameObject:
   m_ObjectHideFlags: 0

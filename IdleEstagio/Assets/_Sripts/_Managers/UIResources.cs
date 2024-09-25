@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class UIResources : MonoBehaviour
 {
+    public static UIResources instance;
 
     public TextMeshProUGUI goldText;    // Texto que exibe a quantidade de ouro
     public TextMeshProUGUI foodText;    // Texto que exibe a quantidade de comida
@@ -11,32 +12,36 @@ public class UIResources : MonoBehaviour
 
     private void Awake() 
     {
-        ResourceNode.OnResourceGained += UpdateTextInfo;
+        instance = this;
     }
 
-    private void UpdateTextInfo(ResourcesTypes.Types type)
+    public void UpdateTextInfo(ResourcesTypes.Types type)
     {
         switch (type)
         {
             case ResourcesTypes.Types.gold:
-            Debug.Log("+1 Gold");   // Exibe no console o que foi ganho //
-            goldText.text = CurrencyManager.Instance.gold.ToString();
+                goldText.text = CurrencyManager.Instance.gold.ToString("F2");
                 break;
             case ResourcesTypes.Types.food:
-                Debug.Log("+1 Food");   // Exibe no console o que foi ganho //
-                // foodText.text = CurrencyManager.Instance.food.ToString();
+                foodText.text = CurrencyManager.Instance.food.ToString("F2");
                 break;
             case ResourcesTypes.Types.buildingMaterial:
-                Debug.Log("+1 Building Material");  // Exibe no console o que foi ganho //
-                // buildingMaterialText.text = CurrencyManager.Instance.buildingMaterial.ToString();
+                buildingMaterialText.text = CurrencyManager.Instance.buildingMaterial.ToString("F2");
                 break;
             case ResourcesTypes.Types.ore:
-                Debug.Log("+1 ore");    // Exibe no console o que foi ganho //
-                oreText.text = CurrencyManager.Instance.ore.ToString();
+                oreText.text = CurrencyManager.Instance.ore.ToString("F2");
                 break;
             default:
                 break;
         }
         
+    }
+
+    public void UpdateTextInfo()
+    {
+        goldText.text = CurrencyManager.Instance.gold.ToString("F2");
+        foodText.text = CurrencyManager.Instance.food.ToString("F2");
+        buildingMaterialText.text = CurrencyManager.Instance.buildingMaterial.ToString("F2");
+        oreText.text = CurrencyManager.Instance.ore.ToString("F2");
     }
 }
