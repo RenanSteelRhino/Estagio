@@ -28,13 +28,13 @@ public class NodeVisualManager : MonoBehaviour
     public List<GameObject> oreMineVisuals = new List<GameObject>();    // Lista de representações visuais de "ore mine" //
 
 
-    public void UpdateVisual(NodeGlobalTypes types)    // Método para atualizar a aparência visual //
+    public void UpdateVisual(NodeSpecificType types)    // Método para atualizar a aparência visual //
     {
         switch (types)
         {
-            case NodeGlobalTypes.buildingMaterial:
-
-                if(ResourceStoreManager.instance.upgradesInStore.Where(item => item.newName == "Forestry").LastOrDefault().level % forestryMilestone == 0)   // Verifica se o nível atual de "forestry" atingiu o marco para mudar //
+            case NodeSpecificType.wood:
+                int level = ResourceStoreManager.instance.upgradesInStore.Where(item => item.newName == "Forestry").LastOrDefault().level;
+                if(level % forestryMilestone == 0 && level != 0)   // Verifica se o nível atual de "forestry" atingiu o marco para mudar //
                 {
                     forestryVisualLevel++;
                     for (int i = 0; i < forestryVisuals.Count; i++)
@@ -45,17 +45,17 @@ public class NodeVisualManager : MonoBehaviour
                     else
                         forestryVisuals[forestryVisuals.Count-1].SetActive(true);   // Se o nível for maior que a quantidade de visuais, ativa o último //
                 }
-            //     if(ResourceNodeLevels.instance.currentQuaryLevel % quaryMilestone == 0) // Verifica se o nível atual de "quary" atingiu o marco para mudar //
-            //     {
-            //         quaryVisualLevel++;
-            //         for (int i = 0; i < quaryVisuals.Count; i++)
-            //             quaryVisuals[i].SetActive(false);   // Desativa todos os objetos visuais da lista //
+                // if(ResourceNodeLevels.instance.currentQuaryLevel % quaryMilestone == 0) // Verifica se o nível atual de "quary" atingiu o marco para mudar //
+                // {
+                //     quaryVisualLevel++;
+                //     for (int i = 0; i < quaryVisuals.Count; i++)
+                //         quaryVisuals[i].SetActive(false);   // Desativa todos os objetos visuais da lista //
 
-            //         if (quaryVisualLevel < quaryVisuals.Count)
-            //             quaryVisuals[quaryVisualLevel].SetActive(true); // Ativa o objeto visual correspondente ao nível atual //
-            //         else
-            //             quaryVisuals[quaryVisuals.Count-1].SetActive(true); // Se o nível for maior que a quantidade de visuais, ativa o último //
-            //     }
+                //     if (quaryVisualLevel < quaryVisuals.Count)
+                //         quaryVisuals[quaryVisualLevel].SetActive(true); // Ativa o objeto visual correspondente ao nível atual //
+                //     else
+                //         quaryVisuals[quaryVisuals.Count-1].SetActive(true); // Se o nível for maior que a quantidade de visuais, ativa o último //
+                // }
             break;
 
         }

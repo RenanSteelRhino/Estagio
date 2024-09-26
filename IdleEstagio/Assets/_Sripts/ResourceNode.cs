@@ -6,10 +6,16 @@ using UnityEngine;
 
 public class ResourceNode : MonoBehaviour
 {
-    public NodeGlobalTypes type;
-    public static event Action<NodeGlobalTypes> OnResourceGained;  // Evento estático que será invocado quando um recurso for coletado
+    public NodeSpecificType type;
+    public static event Action<NodeSpecificType> OnResourceGained;  // Evento estático que será invocado quando um recurso for coletado
     public Vector3 nomalScale;  // Escala normal do objeto
     public Vector3 bigScale;    // Escala maior usada para efeito de clique
+
+    public void Awake(){
+        nomalScale = new Vector3(1, 1,  1);
+        bigScale = new Vector3(1.5f, 1.5f, 1.5f);
+
+    }
 
     private void OnMouseDown()   // Método chamado quando o objeto é clicado
     {
@@ -21,24 +27,28 @@ public class ResourceNode : MonoBehaviour
         
         switch (type)
         {
-            case NodeGlobalTypes.gold:
-                OnResourceGained.Invoke(NodeGlobalTypes.gold); // Dispara o evento indicando que ouro foi coletado
+            case NodeSpecificType.stone:
+                OnResourceGained.Invoke(NodeSpecificType.stone); // Dispara o evento indicando que ouro foi coletado
+                break;
+
+             case NodeSpecificType.gold:
+                OnResourceGained.Invoke(NodeSpecificType.gold); // Dispara o evento indicando que ouro foi coletado
                 break;
             
-            case NodeGlobalTypes.food:
-                OnResourceGained.Invoke(NodeGlobalTypes.food); // Dispara o evento indicando que comida foi coletada
+            case NodeSpecificType.meat:
+                OnResourceGained.Invoke(NodeSpecificType.meat); // Dispara o evento indicando que comida foi coletada
+                break;
+
+            case NodeSpecificType.farm:
+                OnResourceGained.Invoke(NodeSpecificType.farm); // Dispara o evento indicando que comida foi coletada
                 break;
             
-            case NodeGlobalTypes.buildingMaterial:
-                OnResourceGained.Invoke(NodeGlobalTypes.buildingMaterial); // Dispara o evento indicando que material de construção foi coletado
-
-                // ResourceNodeLevels.instance.currentForestryLevel++; // Incrementa o nível de "forestry" e "quary"
-                // ResourceNodeLevels.instance.currentQuaryLevel++;
-                // NodeVisualManager.instance.UpdateVisual(type);
+            case NodeSpecificType.wood:
+                OnResourceGained.Invoke(NodeSpecificType.wood); // Dispara o evento indicando que material de construção foi coletado
 
                 break;
-            case NodeGlobalTypes.ore:
-                OnResourceGained.Invoke(NodeGlobalTypes.ore);  // Dispara o evento indicando que minério foi coletado
+            case NodeSpecificType.iron:
+                OnResourceGained.Invoke(NodeSpecificType.iron);  // Dispara o evento indicando que minério foi coletado
                 break;
 
             default:

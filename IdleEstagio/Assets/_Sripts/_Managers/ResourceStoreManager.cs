@@ -40,6 +40,11 @@ public class ResourceStoreManager : MonoBehaviour
             case NodeSpecificType.wood:
                 btn.onClick.AddListener(OnForestryClicked);
             break;
+            
+            case NodeSpecificType.stone:   
+                btn.onClick.AddListener(OnQuarryClicked);
+            break;
+
         }
     }
 
@@ -48,6 +53,11 @@ public class ResourceStoreManager : MonoBehaviour
         //Aumenta o nivel
         // ResourceNodeLevels.instance.IncreaseNodeLevel(ResourcesTypes.NodeSpecificType.wood);
         upgradesInStore.Where(item => item.newName == "Forestry").LastOrDefault().LevelUP();
+    }
+    private void OnQuarryClicked()
+    {
+        upgradesInStore.Where(item => item.newName == "Quarry").LastOrDefault().LevelUP();
+
     }
 
     private void OnExit()

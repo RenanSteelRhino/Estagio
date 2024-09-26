@@ -17,50 +17,58 @@ public class CurrencyManager : MonoBehaviour
         ResourceNode.OnResourceGained += UpdateCounts;  //quando o evento OnResourceGained for disparado, o método UpdateCounts será chamado automaticamente//
     }
 
-    public bool DoesIHaveCurrencyToBuy(NodeGlobalTypes types, float quantity)
+    public bool DoesIHaveCurrencyToBuy(NodeSpecificType types, float quantity)
     {
         switch (types)
         {
-            case NodeGlobalTypes.gold:
+            case NodeSpecificType.gold:
                 if(gold >= quantity) return true;
                 else return false;
 
-            case NodeGlobalTypes.food:
+            case NodeSpecificType.meat:
                 if(food >= quantity) return true;
                 else return false;
 
-            case NodeGlobalTypes.buildingMaterial:
+            case NodeSpecificType.wood:
                 if(buildingMaterial >= quantity) return true;
                 else return false;
 
-            case NodeGlobalTypes.ore:
+            case NodeSpecificType.iron:
                 if(ore >= quantity) return true;
+                else return false;
+
+            case NodeSpecificType.stone:
+                if(buildingMaterial >= quantity) return true;
                 else return false;
         }
 
         return false;
     }
 
-    public bool SpendCurrency(NodeGlobalTypes types, float quantity)
+    public bool SpendCurrency(NodeSpecificType types, float quantity)
     {
         if(DoesIHaveCurrencyToBuy(types, quantity))
         {
             switch (types)
             {
-                case NodeGlobalTypes.gold:
+                case NodeSpecificType.gold:
                     gold -= quantity;
                     return true;
 
-                case NodeGlobalTypes.food:
+                case NodeSpecificType.meat:
                     food -= quantity;
                     return true;
 
-                case NodeGlobalTypes.buildingMaterial:
+                case NodeSpecificType.wood:
                     buildingMaterial -= quantity;
                     return true;
 
-                case NodeGlobalTypes.ore:
+                case NodeSpecificType.iron:
                     ore -= quantity;
+                    return true;
+
+                case NodeSpecificType.stone:
+                buildingMaterial -= quantity;
                     return true;
             }
         }
@@ -69,22 +77,26 @@ public class CurrencyManager : MonoBehaviour
 
     }
 
-    private void UpdateCounts(NodeGlobalTypes types)
+    private void UpdateCounts(NodeSpecificType types)
     {
         float SpawnAmount = 1;
         switch (types)
         {
-            case NodeGlobalTypes.gold:
+            case NodeSpecificType.gold:
             gold++;                             // Incrementa o contador de ouro //
             break;
-            case NodeGlobalTypes.food:
+            case NodeSpecificType.meat:
             food++;                             // Incrementa o contador de Comida //
             break;
-            case NodeGlobalTypes.buildingMaterial:
+            case NodeSpecificType.stone:
+            SpawnAmount = 1 + ResourceStoreManager.instance.upgradesInStore.Where(item => item.newName == "Quarry").LastOrDefault().level;
+            buildingMaterial += SpawnAmount;
+            break;
+            case NodeSpecificType.wood:
             SpawnAmount = 1 + ResourceStoreManager.instance.upgradesInStore.Where(item => item.newName == "Forestry").LastOrDefault().level;
             buildingMaterial += SpawnAmount;
             break;
-            case NodeGlobalTypes.ore:
+            case NodeSpecificType.iron:
             ore++;                              // Incrementa o contador de Minerio //
             break;
         }

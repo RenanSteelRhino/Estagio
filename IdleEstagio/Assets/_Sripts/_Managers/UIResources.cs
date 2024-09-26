@@ -15,20 +15,20 @@ public class UIResources : MonoBehaviour
         instance = this;
     }
 
-    public void UpdateTextInfo(NodeGlobalTypes type)
+    public void UpdateTextInfo(NodeSpecificType type)
     {
         switch (type)
         {
-            case NodeGlobalTypes.gold:
+            case NodeSpecificType.gold:
                 goldText.text = CurrencyManager.Instance.gold.ToString("F2");
                 break;
-            case NodeGlobalTypes.food:
+            case NodeSpecificType.meat:
                 foodText.text = CurrencyManager.Instance.food.ToString("F2");
                 break;
-            case NodeGlobalTypes.buildingMaterial:
+            case NodeSpecificType.wood:
                 buildingMaterialText.text = CurrencyManager.Instance.buildingMaterial.ToString("F2");
                 break;
-            case NodeGlobalTypes.ore:
+            case NodeSpecificType.iron:
                 oreText.text = CurrencyManager.Instance.ore.ToString("F2");
                 break;
             default:
