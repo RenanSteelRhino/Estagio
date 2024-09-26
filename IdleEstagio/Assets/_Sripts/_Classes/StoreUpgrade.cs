@@ -10,7 +10,6 @@ public class StoreUpgrade
     public float multiplier = 1.07f;
     public int level;
     public StoreBannerInfo uiInfo;
-    public NodeSpecificType basedOnType;
 
     public void UpdateUI()
     {
@@ -27,10 +26,16 @@ public class StoreUpgrade
     {
         if(CurrencyManager.Instance.SpendCurrency(type, GetLevelCost()))
         {
+            Debug.Log("TA RODANDO DI BOA");
             level++;
             UpdateUI();
             UIResources.instance.UpdateTextInfo();
             NodeVisualManager.instance.UpdateVisual(type);
         }
+    }
+
+    public void InitilizeButton()
+    {
+        uiInfo.ReturnBuyButton().onClick.AddListener(LevelUP);
     }
 }

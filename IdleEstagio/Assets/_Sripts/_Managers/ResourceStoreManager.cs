@@ -15,7 +15,6 @@ public class ResourceStoreManager : MonoBehaviour
     public GameObject Store;
     [Space]
     [Header("=== Upgrades ===")]
-
     public List<StoreUpgrade> upgradesInStore = new List<StoreUpgrade>();
 
     private void Awake() 
@@ -29,35 +28,19 @@ public class ResourceStoreManager : MonoBehaviour
         for (int i = 0; i < upgradesInStore.Count; i++)
         {
             upgradesInStore[i].UpdateUI();
-            InitializeButton(upgradesInStore[i].uiInfo.ReturnBuyButton(), upgradesInStore[i].basedOnType);
+            upgradesInStore[i].InitilizeButton();
         }
     }
 
-    private void InitializeButton(Button btn, NodeSpecificType type)
+    public int GetLevelFromType(NodeSpecificType type)
     {
-        switch(type)
+        for (int i = 0; i < upgradesInStore.Count; i++)
         {
-            case NodeSpecificType.wood:
-                btn.onClick.AddListener(OnForestryClicked);
-            break;
-            
-            case NodeSpecificType.stone:   
-                btn.onClick.AddListener(OnQuarryClicked);
-            break;
-
+            if(type == upgradesInStore[i].type)
+                return upgradesInStore[i].level;
         }
-    }
-
-    private void OnForestryClicked()
-    {
-        //Aumenta o nivel
-        // ResourceNodeLevels.instance.IncreaseNodeLevel(ResourcesTypes.NodeSpecificType.wood);
-        upgradesInStore.Where(item => item.newName == "Forestry").LastOrDefault().LevelUP();
-    }
-    private void OnQuarryClicked()
-    {
-        upgradesInStore.Where(item => item.newName == "Quarry").LastOrDefault().LevelUP();
-
+        
+        return 0;
     }
 
     private void OnExit()

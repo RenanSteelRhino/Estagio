@@ -1,9 +1,8 @@
 using System;
-using System.Collections.Generic;
-using Cainos.LucidEditor;
 using DG.Tweening;
 using UnityEngine;
 
+[RequireComponent(typeof(BoxCollider2D))]
 public class ResourceNode : MonoBehaviour
 {
     public NodeSpecificType type;
@@ -11,10 +10,10 @@ public class ResourceNode : MonoBehaviour
     public Vector3 nomalScale;  // Escala normal do objeto
     public Vector3 bigScale;    // Escala maior usada para efeito de clique
 
-    public void Awake(){
+    public void Awake()
+    {
         nomalScale = new Vector3(1, 1,  1);
         bigScale = new Vector3(1.5f, 1.5f, 1.5f);
-
     }
 
     private void OnMouseDown()   // Método chamado quando o objeto é clicado

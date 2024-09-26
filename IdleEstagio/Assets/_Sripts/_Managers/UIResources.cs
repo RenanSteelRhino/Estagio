@@ -39,9 +39,16 @@ public class UIResources : MonoBehaviour
 
     public void UpdateTextInfo()
     {
-        goldText.text = CurrencyManager.Instance.gold.ToString("F2");
-        foodText.text = CurrencyManager.Instance.food.ToString("F2");
-        buildingMaterialText.text = CurrencyManager.Instance.buildingMaterial.ToString("F2");
-        oreText.text = CurrencyManager.Instance.ore.ToString("F2");
+        if(goldText != null)
+            goldText.text = CurrencyManager.Instance.gold.ToString("F2");
+
+        if(foodText != null)
+            foodText.text = CurrencyManager.Instance.food.ToString("F2");
+
+        if(buildingMaterialText != null)
+            buildingMaterialText.text = CurrencyManager.Instance.buildingMaterial.ToString("F2");
+
+        if(oreText != null)
+            oreText.text = CurrencyManager.Instance.ore.ToString("F2");
     }
 }

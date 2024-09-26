@@ -89,11 +89,11 @@ public class CurrencyManager : MonoBehaviour
             food++;                             // Incrementa o contador de Comida //
             break;
             case NodeSpecificType.stone:
-            SpawnAmount = 1 + ResourceStoreManager.instance.upgradesInStore.Where(item => item.newName == "Quarry").LastOrDefault().level;
+            SpawnAmount = 1 + ResourceStoreManager.instance.GetLevelFromType(types);
             buildingMaterial += SpawnAmount;
             break;
             case NodeSpecificType.wood:
-            SpawnAmount = 1 + ResourceStoreManager.instance.upgradesInStore.Where(item => item.newName == "Forestry").LastOrDefault().level;
+            SpawnAmount = 1 + ResourceStoreManager.instance.GetLevelFromType(types);
             buildingMaterial += SpawnAmount;
             break;
             case NodeSpecificType.iron:
