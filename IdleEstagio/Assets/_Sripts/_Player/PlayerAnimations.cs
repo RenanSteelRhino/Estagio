@@ -14,12 +14,23 @@ public class PlayerAnimations : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.RightArrow))
         {
-            anim.Play("Walk-Right");
+            anim.SetBool("MovingRight", true);
+            anim.SetBool("MovingLeft", false);
+            anim.SetBool("IsMoving", true);
         }
 
         if(Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            anim.Play("Walk-Left");
+            anim.SetBool("MovingLeft", true);
+            anim.SetBool("MovingRight", false);
+            anim.SetBool("IsMoving", true);
+        }
+
+        if(Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.LeftArrow))
+        {
+            anim.SetBool("IsMoving", false);
+            anim.SetBool("MovingRight", false);
+            anim.SetBool("MovingLeft", false);
         }
     }
 }
