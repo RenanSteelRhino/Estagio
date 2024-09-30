@@ -27,7 +27,7 @@ public class FloatingTextManager : MonoBehaviour
         // }
     }
 
-    public void SpawnFloatingText(NodeSpecificType types, float amount)      // Método responsável por exibir o texto flutuante quando um recurso for coletado //
+    public void SpawnFloatingText(NodeSpecificType types, float amount, Vector3 position)      // Método responsável por exibir o texto flutuante quando um recurso for coletado //
     {
 
         // Remove o primeiro objeto de texto flutuante da fila para reutilizá-lo //
@@ -45,14 +45,11 @@ public class FloatingTextManager : MonoBehaviour
         //Pego a posição do click
         Vector2 mousePos = Input.mousePosition;
 
-        //Converto a posição para world point
-        textObject.transform.position = Camera.main.ScreenToWorldPoint(new Vector2(mousePos.x, mousePos.y));
-
-        //Zero o Z do obj para n bugar com a camera
+        //Randomizadores de posição para o floating text
         float randomX = Random.Range(-1f,1f);
-        textObject.transform.position = new Vector3(textObject.transform.position.x + randomX, textObject.transform.position.y, 0);
-
         float randomY = Random.Range(1f,2f);
+        textObject.transform.position = new Vector3(position.x + randomX, position.y + randomY, 0);
+
         textObject.transform.DOMoveY(textObject.transform.position.y + randomY, 1).OnComplete( ()=> 
         {
             textObject.SetActive(false);    // Desativa o texto após a animação terminar//

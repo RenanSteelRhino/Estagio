@@ -77,7 +77,7 @@ public class CurrencyManager : MonoBehaviour
 
     }
 
-    private void UpdateCounts(NodeSpecificType types)
+    private void UpdateCounts(NodeSpecificType types, Vector3 position)
     {
         float SpawnAmount = 1;
         switch (types)
@@ -100,7 +100,8 @@ public class CurrencyManager : MonoBehaviour
             ore++;                              // Incrementa o contador de Minerio //
             break;
         }
-        FloatingTextManager.Instance.SpawnFloatingText(types, SpawnAmount);
+
+        FloatingTextManager.Instance.SpawnFloatingText(types, SpawnAmount, position);
         UIResources.instance.UpdateTextInfo();
     }
 }
