@@ -14,7 +14,7 @@ public class CurrencyManager : MonoBehaviour
     public void Awake()
     {
         Instance = this;                                // Inicializa a instância estática da classe//
-        ResourceNode.OnResourceGained += UpdateCounts;  //quando o evento OnResourceGained for disparado, o método UpdateCounts será chamado automaticamente//
+        ResourceNode.OnResourceGained += UpdateCounts;
     }
 
     public bool DoesIHaveCurrencyToBuy(NodeSpecificType types, float quantity)
@@ -77,10 +77,11 @@ public class CurrencyManager : MonoBehaviour
 
     }
 
-    private void UpdateCounts(NodeSpecificType types, Vector3 position)
+
+    private void UpdateCounts(ResourceNode node)
     {
         float SpawnAmount = 1;
-        switch (types)
+        switch (node.type)
         {
             case NodeSpecificType.gold:
             gold++;                             // Incrementa o contador de ouro //
@@ -89,11 +90,11 @@ public class CurrencyManager : MonoBehaviour
             food++;                             // Incrementa o contador de Comida //
             break;
             case NodeSpecificType.stone:
-            SpawnAmount = 1 + ResourceStoreManager.instance.GetLevelFromType(types);
+            SpawnAmount = 1 + ResourceStoreManager.instance.GetLevelFromType(node.type);
             buildingMaterial += SpawnAmount;
             break;
             case NodeSpecificType.wood:
-            SpawnAmount = 1 + ResourceStoreManager.instance.GetLevelFromType(types);
+            SpawnAmount = 1 + ResourceStoreManager.instance.GetLevelFromType(node.type);
             buildingMaterial += SpawnAmount;
             break;
             case NodeSpecificType.iron:
@@ -101,7 +102,7 @@ public class CurrencyManager : MonoBehaviour
             break;
         }
 
-        FloatingTextManager.Instance.SpawnFloatingText(types, SpawnAmount, position);
+        FloatingTextManager.Instance.SpawnFloatingText(node, SpawnAmount);
         UIResources.instance.UpdateTextInfo();
     }
 }
