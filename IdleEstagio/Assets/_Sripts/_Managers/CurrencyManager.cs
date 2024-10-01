@@ -80,7 +80,7 @@ public class CurrencyManager : MonoBehaviour
 
     private void UpdateCounts(ResourceNode node)
     {
-        float SpawnAmount = 1;
+        float SpawnAmount = node.income;
         switch (node.type)
         {
             case NodeSpecificType.gold:
@@ -90,11 +90,11 @@ public class CurrencyManager : MonoBehaviour
             food++;                             // Incrementa o contador de Comida //
             break;
             case NodeSpecificType.stone:
-            SpawnAmount = 1 + ResourceStoreManager.instance.GetLevelFromType(node.type);
+            SpawnAmount = node.income + ResourceStoreManager.instance.GetLevelFromType(node.type);
             buildingMaterial += SpawnAmount;
             break;
             case NodeSpecificType.wood:
-            SpawnAmount = 1 + ResourceStoreManager.instance.GetLevelFromType(node.type);
+            SpawnAmount = node.income + ResourceStoreManager.instance.GetLevelFromType(node.type);
             buildingMaterial += SpawnAmount;
             break;
             case NodeSpecificType.iron:

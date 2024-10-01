@@ -1,4 +1,5 @@
 using System;
+using System.Threading;
 using DG.Tweening;
 using UnityEngine;
 
@@ -7,11 +8,22 @@ public class ResourceNode : MonoBehaviour
 {
     public NodeSpecificType type;
     public static event Action<ResourceNode> OnResourceGained;  // Evento estático que será invocado quando um recurso for coletado
+    [Space]
+    [Header("Animations Options")]
     public Vector3 nomalScale;  // Escala normal do objeto
     public Vector3 bigScale;    // Escala maior usada para efeito de clique
     MyTimer nodeTimer;
+    [HideInInspector] public bool hasClicked;
+    [Space]
+    [Header("Timer Options")]
+    public float duration;
+    [Space]
+    [Header("Idle Options")]
+    public float income;
+    [Space]
+    [Header("Other Options")]
     public bool createTextOnlyOnClick;
-    public bool hasClicked;
+    
 
     public void Awake()
     {
@@ -26,7 +38,7 @@ public class ResourceNode : MonoBehaviour
     private void Start() 
     {
         //Inicializa o timer com tempo e seta se ele esta em looping
-        nodeTimer.InitializeTimer(1, true);
+        nodeTimer.InitializeTimer(duration, true);
     }
 
     public void Update()
