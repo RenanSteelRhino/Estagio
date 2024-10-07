@@ -14,17 +14,16 @@ public class EnemyTakeDamage : EnemyBase
     protected override void Awake() 
     {
         base.Awake();
-        anim = GetComponent<Animator>();
         lifeScript = GetComponent<EnemyLife>();
     }
 
     public void TakeDamage()
     {
-        HitAnimation();
+        HitVFX();
         lifeScript.TakeDamage();
     }
 
-    private void HitAnimation()
+    private void HitVFX()
     {
         anim.Play("Hit");
 

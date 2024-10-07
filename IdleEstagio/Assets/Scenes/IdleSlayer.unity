@@ -30851,7 +30851,6 @@ GameObject:
   - component: {fileID: 563531757}
   - component: {fileID: 563531756}
   - component: {fileID: 563531759}
-  - component: {fileID: 563531761}
   m_Layer: 0
   m_Name: Player Slayer
   m_TagString: Untagged
@@ -30964,18 +30963,6 @@ MonoBehaviour:
   enemyLayerMask:
     serializedVersion: 2
     m_Bits: 256
---- !u!114 &563531761
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 563531755}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d80eb324e277a114889de88533d13f8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &570962772
 GameObject:
   m_ObjectHideFlags: 0
