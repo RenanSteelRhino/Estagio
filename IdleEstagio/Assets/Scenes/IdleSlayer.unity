@@ -30851,6 +30851,7 @@ GameObject:
   - component: {fileID: 563531757}
   - component: {fileID: 563531756}
   - component: {fileID: 563531759}
+  - component: {fileID: 563531760}
   m_Layer: 0
   m_Name: Player Slayer
   m_TagString: Untagged
@@ -30963,6 +30964,26 @@ MonoBehaviour:
   enemyLayerMask:
     serializedVersion: 2
     m_Bits: 256
+--- !u!114 &563531760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 563531755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef307c80ed82fa64d97b68cb4f7c3b17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jump: 6
+  initialY: 0
+  maxY: 0
+  isJumping: 0
+  isUp: 0
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &570962772
 GameObject:
   m_ObjectHideFlags: 0
@@ -35313,7 +35334,8 @@ GameObject:
   - component: {fileID: 1982379343}
   - component: {fileID: 1982379346}
   - component: {fileID: 1982379345}
-  m_Layer: 0
+  - component: {fileID: 1982379347}
+  m_Layer: 6
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49911,6 +49933,42 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!19719996 &1982379347
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982379342}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0
+  m_UseDelaunayMesh: 0
 --- !u!1001 &2002203351
 PrefabInstance:
   m_ObjectHideFlags: 0

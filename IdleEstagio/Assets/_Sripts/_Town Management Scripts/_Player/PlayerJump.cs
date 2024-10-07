@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class PlayerJump : MonoBehaviour
 {
@@ -8,6 +7,7 @@ public class PlayerJump : MonoBehaviour
     public float maxY;
     public bool isJumping = false;
     public bool isUp = false;
+    public LayerMask groundLayer;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +18,21 @@ public class PlayerJump : MonoBehaviour
     // Update is called once per frame
     void Update()
     {  
+        //                                   origem da linha       direção    distancia     layer do chão
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 1, groundLayer);
+
+        if(hit)
+        {
+            // To no chão
+            Debug.DrawRay(transform.position, Vector2.down*1, Color.green);
+        }
+        else
+        {
+            // n to no chão
+            Debug.DrawRay(transform.position, Vector2.down*1, Color.red);
+        }
+
+
         if(Input.GetMouseButtonDown(0) && !isJumping)
         {
             isUp = true;
