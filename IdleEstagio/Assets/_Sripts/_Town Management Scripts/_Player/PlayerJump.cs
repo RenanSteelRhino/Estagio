@@ -19,17 +19,18 @@ public class PlayerJump : MonoBehaviour
     void Update()
     {  
         //                                   origem da linha       direção    distancia     layer do chão
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 1, groundLayer);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position - new Vector3(0,0.85f,0), Vector2.down, 0.1f, groundLayer);
 
         if(hit)
-        {
-            // To no chão
-            Debug.DrawRay(transform.position, Vector2.down*1, Color.green);
+        { 
+            isJumping=false;
+            initialY = transform.position.y;
+            Debug.DrawRay(transform.position - new Vector3(0,0.85f,0), Vector2.down*0.1f, Color.green);
         }
         else
         {
-            // n to no chão
-            Debug.DrawRay(transform.position, Vector2.down*1, Color.red);
+            isJumping=true;
+            Debug.DrawRay(transform.position - new Vector3(0,0.85f,0), Vector2.down*0.1f, Color.red);
         }
 
 
