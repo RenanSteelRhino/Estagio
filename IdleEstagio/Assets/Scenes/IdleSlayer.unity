@@ -236,7 +236,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.05
-  isMoving: 0
   renderes:
   - {fileID: 1678680017}
   - {fileID: 424838492}
@@ -542,7 +541,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  isMoving: 0
   renderes:
   - {fileID: 154883635}
   - {fileID: 610726482}
@@ -596,7 +594,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  isMoving: 0
   renderes:
   - {fileID: 2092146355}
   - {fileID: 235780103}
@@ -646,7 +643,7 @@ Transform:
   m_GameObject: {fileID: 554538451}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.23, y: -2.387, z: 9.637961}
+  m_LocalPosition: {x: 7.23, y: -2.282, z: 9.637961}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1084,7 +1081,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  isMoving: 0
   renderes:
   - {fileID: 1982379345}
   - {fileID: 1454522161}
@@ -1456,7 +1452,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.2
-  isMoving: 0
   renderes:
   - {fileID: 587307395}
   - {fileID: 123834260}
@@ -1594,7 +1589,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.5
-  isMoving: 0
   renderes:
   - {fileID: 1445290122}
   - {fileID: 914570982}
@@ -2358,7 +2352,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.05
-  isMoving: 0
   renderes:
   - {fileID: 952549038}
   - {fileID: 1816001947}

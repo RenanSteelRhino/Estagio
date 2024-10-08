@@ -7,12 +7,13 @@ public class EnemySpawnManager : MonoBehaviour
 {
     [SerializeField] private List<GameObject> enemiesList = new List<GameObject>();
     [SerializeField] private Transform spawnPoint;
+    [SerializeField] private float spawnDuration = 5;
     private MyTimer spawnTimer;
 
     private void Awake() 
     {
         spawnTimer = new MyTimer();
-        spawnTimer.InitializeTimer(2, true);
+        spawnTimer.InitializeTimer(spawnDuration, true);
         spawnTimer.OnTimerEnd += SpawnEnemy;
     }    
 
@@ -27,5 +28,8 @@ public class EnemySpawnManager : MonoBehaviour
         GameObject spawnedEnemy = Instantiate(enemy, spawnPoint.position, quaternion.identity);
 
         MoveManager.instance.AddMovableEntityToList(spawnedEnemy.GetComponent<MoveBase>());
+
+        spawnDuration = UnityEngine.Random.Range(2f, 10f);
+        spawnTimer.InitializeTimer(spawnDuration, true);
     }
 }

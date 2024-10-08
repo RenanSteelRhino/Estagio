@@ -11,9 +11,8 @@ public class EnemyTakeDamage : EnemyBase
     [SerializeField] private Vector2 vfxMovement;
     EnemyLife lifeScript;
 
-    protected override void Awake() 
+    private void Awake() 
     {
-        base.Awake();
         lifeScript = GetComponent<EnemyLife>();
     }
 
