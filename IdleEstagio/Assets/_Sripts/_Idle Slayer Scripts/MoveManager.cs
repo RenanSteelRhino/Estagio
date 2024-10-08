@@ -7,6 +7,17 @@ public class MoveManager : MonoBehaviour
 {
     public static MoveManager instance;
     public List<MoveBase> allMovableEntities = new List<MoveBase>();
+    public bool isMoving {get; private set;}
+
+    public void AddMovableEntityToList(MoveBase entity)
+    {
+        allMovableEntities.Add(entity);
+    }
+
+     public void RemoveMovableEntityToList(MoveBase entity)
+    {
+        allMovableEntities.Remove(entity);
+    }
 
     private void Awake() 
     {
@@ -22,9 +33,13 @@ public class MoveManager : MonoBehaviour
 
     public void SetAllMovement(bool isMoving)
     {
+        this.isMoving = isMoving;
         for (int i = 0; i < allMovableEntities.Count; i++)
         {
             allMovableEntities[i].SetIsMoving(isMoving);
         }
+
+
+        Debug.Log("List Count = " + allMovableEntities.Count);
     }
 }

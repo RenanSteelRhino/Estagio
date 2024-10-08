@@ -10,7 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 115030693960401757, guid: 054ee0e29f4ec7d47a609b706ae82b87, type: 3}
       propertyPath: m_Name
-      value: SlimeEnemy Variant
+      value: SlimeEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 5121682478141505215, guid: 054ee0e29f4ec7d47a609b706ae82b87, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 5121682478141505215, guid: 054ee0e29f4ec7d47a609b706ae82b87, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 6115483469171089981, guid: 054ee0e29f4ec7d47a609b706ae82b87, type: 3}
       propertyPath: m_Sprite
