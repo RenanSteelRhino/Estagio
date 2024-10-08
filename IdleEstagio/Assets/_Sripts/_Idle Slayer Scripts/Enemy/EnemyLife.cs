@@ -7,9 +7,8 @@ public class EnemyLife : EnemyBase
     [SerializeField] private Image lifeBar;
     float maxLife;
 
-    protected override void Awake() 
+    private void Awake() 
     {
-        base.Awake();
         maxLife = currentLife;
     }
 

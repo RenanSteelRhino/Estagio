@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RinoEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 1587803770683315587, guid: 054ee0e29f4ec7d47a609b706ae82b87, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6858001784930192701, guid: 5f6e4279b73f74146bcf36013201d778, type: 3}
     - target: {fileID: 1964103960591688052, guid: 054ee0e29f4ec7d47a609b706ae82b87, type: 3}
       propertyPath: currentLife
       value: 1
@@ -68,6 +72,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7032828983263313243, guid: 054ee0e29f4ec7d47a609b706ae82b87, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 5d72bb97d0a5a72479168cbb0822fb89, type: 2}
     - target: {fileID: 7083730139111182911, guid: 054ee0e29f4ec7d47a609b706ae82b87, type: 3}
       propertyPath: vfxs.Array.size
       value: 0
@@ -76,6 +84,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 5d72bb97d0a5a72479168cbb0822fb89, type: 2}
+    - target: {fileID: 8249675016199735518, guid: 054ee0e29f4ec7d47a609b706ae82b87, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.007
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

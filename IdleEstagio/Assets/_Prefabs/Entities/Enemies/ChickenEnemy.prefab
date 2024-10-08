@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChickenEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 1587803770683315587, guid: 054ee0e29f4ec7d47a609b706ae82b87, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -23792059411196189, guid: f729d6acae7cd754a864abda75a4bbd7, type: 3}
     - target: {fileID: 1964103960591688052, guid: 054ee0e29f4ec7d47a609b706ae82b87, type: 3}
       propertyPath: currentLife
       value: 1
@@ -38,11 +42,11 @@ PrefabInstance:
       objectReference: {fileID: 1102757246451432419, guid: 23316aba36e680643b65700c107f2b36, type: 3}
     - target: {fileID: 6749141575204114654, guid: 054ee0e29f4ec7d47a609b706ae82b87, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.03
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6749141575204114654, guid: 054ee0e29f4ec7d47a609b706ae82b87, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6749141575204114654, guid: 054ee0e29f4ec7d47a609b706ae82b87, type: 3}
       propertyPath: m_LocalPosition.z
@@ -76,6 +80,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7032828983263313243, guid: 054ee0e29f4ec7d47a609b706ae82b87, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 9733536d7fb6ae64196b6ff02152b78d, type: 2}
     - target: {fileID: 7083730139111182911, guid: 054ee0e29f4ec7d47a609b706ae82b87, type: 3}
       propertyPath: vfxs.Array.size
       value: 0
