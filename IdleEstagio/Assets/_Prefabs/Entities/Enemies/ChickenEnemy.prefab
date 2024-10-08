@@ -10,11 +10,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 115030693960401757, guid: 054ee0e29f4ec7d47a609b706ae82b87, type: 3}
       propertyPath: m_Name
-      value: EnemyBasePrefab Variant
+      value: ChickenEnemy
       objectReference: {fileID: 0}
     - target: {fileID: 1964103960591688052, guid: 054ee0e29f4ec7d47a609b706ae82b87, type: 3}
       propertyPath: currentLife
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5121682478141505215, guid: 054ee0e29f4ec7d47a609b706ae82b87, type: 3}
       propertyPath: m_Size.y
