@@ -10,15 +10,39 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 115030693960401757, guid: 054ee0e29f4ec7d47a609b706ae82b87, type: 3}
       propertyPath: m_Name
-      value: EnemyBasePrefab
+      value: EnemyBasePrefab Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 1964103960591688052, guid: 054ee0e29f4ec7d47a609b706ae82b87, type: 3}
+      propertyPath: currentLife
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5121682478141505215, guid: 054ee0e29f4ec7d47a609b706ae82b87, type: 3}
+      propertyPath: m_Size.y
+      value: 0.57789177
+      objectReference: {fileID: 0}
+    - target: {fileID: 5121682478141505215, guid: 054ee0e29f4ec7d47a609b706ae82b87, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.11749373
+      objectReference: {fileID: 0}
+    - target: {fileID: 5121682478141505215, guid: 054ee0e29f4ec7d47a609b706ae82b87, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 5121682478141505215, guid: 054ee0e29f4ec7d47a609b706ae82b87, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 6115483469171089981, guid: 054ee0e29f4ec7d47a609b706ae82b87, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1102757246451432419, guid: 23316aba36e680643b65700c107f2b36, type: 3}
     - target: {fileID: 6749141575204114654, guid: 054ee0e29f4ec7d47a609b706ae82b87, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 4.03
       objectReference: {fileID: 0}
     - target: {fileID: 6749141575204114654, guid: 054ee0e29f4ec7d47a609b706ae82b87, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1.5
       objectReference: {fileID: 0}
     - target: {fileID: 6749141575204114654, guid: 054ee0e29f4ec7d47a609b706ae82b87, type: 3}
       propertyPath: m_LocalPosition.z
@@ -52,6 +76,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7083730139111182911, guid: 054ee0e29f4ec7d47a609b706ae82b87, type: 3}
+      propertyPath: vfxs.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8226158174320139197, guid: 054ee0e29f4ec7d47a609b706ae82b87, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 9733536d7fb6ae64196b6ff02152b78d, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
