@@ -29,17 +29,19 @@ public class EnemyTakeDamage : EnemyBase
 
         for (int i = 0; i < vfxs.Count; i++)
         {
-            GameObject obj = Instantiate(vfxs[i], transform);
+            GameObject vfx = Instantiate(vfxs[i], transform);
 
             Vector3 movement = new Vector3(
                 Random.Range(vfxMovement.x/3,vfxMovement.x),
                 Random.Range(vfxMovement.y/3,vfxMovement.y),
                 0) + transform.position;
 
-            obj.transform.DOMove(movement, vfxDuration).OnComplete( ()=>
+            vfx.transform.DOMove(movement, vfxDuration).OnComplete( ()=>
             {
-                Destroy(obj);
+                Destroy(vfx);
             } );
+
+            vfx.transform.DOScale(new Vector3(0,0,0), vfxDuration).SetEase(Ease.InExpo);
         }
     }
 }

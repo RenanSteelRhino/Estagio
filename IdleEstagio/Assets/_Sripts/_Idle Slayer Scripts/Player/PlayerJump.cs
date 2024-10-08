@@ -26,7 +26,8 @@ public class PlayerJump : MonoBehaviour
             PlayerAnimationController.instance.canJump = false;
         }
 
-        if(Input.GetMouseButtonDown(0) && PlayerAnimationController.instance.canJump)
+        if(Input.GetMouseButtonDown(0) && PlayerAnimationController.instance.canJump && !PlayerAnimationController.instance.isPlayerAttacking
+            && !PlayerAnimationController.instance.IsEnemyNearby)
         {
             rb.AddForce(new Vector2(0,jumpPower));
         }

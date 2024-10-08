@@ -81,7 +81,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Idle-Run (44x30)_0
+  m_Name: SlimeController
   serializedVersion: 5
   m_AnimatorParameters: []
   m_AnimatorLayers:
@@ -108,10 +108,10 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 5383689705321792010}
-    m_Position: {x: 200, y: 0, z: 0}
+    m_Position: {x: 270, y: -10, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -5444212350817253917}
-    m_Position: {x: 80, y: -180, z: 0}
+    m_Position: {x: 580, y: -10, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -2771775822399396390}
     m_Position: {x: 270, y: 140, z: 0}
