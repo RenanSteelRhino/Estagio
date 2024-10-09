@@ -28,6 +28,7 @@ public class EnemyLife : EnemyBase
 
         if (currentLife <= 0)
         {
+            GetComponent<BoxCollider2D>().enabled = false;
             anim.Play("Death");
             MoveManager.instance.RemoveMovableEntityToList(gameObject.GetComponent<MoveBase>());
             Destroy(this.gameObject, 0.5f);

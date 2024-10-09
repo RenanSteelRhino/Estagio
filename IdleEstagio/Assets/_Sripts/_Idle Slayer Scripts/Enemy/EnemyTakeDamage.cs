@@ -20,6 +20,10 @@ public class EnemyTakeDamage : EnemyBase
     {
         HitVFX();
         lifeScript.TakeDamage();
+        if (PlayerCrit.Instance.DiceCrit())
+        {
+        FloatingTextManager.Instance.SpawnFloatingText(transform);
+        }
     }
 
     private void HitVFX()
