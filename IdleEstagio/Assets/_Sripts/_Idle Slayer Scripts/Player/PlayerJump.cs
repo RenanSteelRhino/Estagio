@@ -27,7 +27,7 @@ public class PlayerJump : MonoBehaviour
         }
 
         if(Input.GetMouseButtonDown(0) && PlayerAnimationController.instance.canJump && !PlayerAnimationController.instance.isPlayerAttacking
-            && !PlayerAnimationController.instance.IsEnemyNearby)
+            && !PlayerAnimationController.instance.IsEnemyNearby && GameManager.instance.CompareState("IdleSlayerState"))
         {
             rb.AddForce(new Vector2(0,jumpPower));
         }

@@ -13,6 +13,9 @@ public class GameManager : MonoBehaviour
     public Button changeStateButton;
     public bool isChanging;
 
+    public GameObject SwordImg;
+    public GameObject TownImg;
+
     public static GameManager instance;
     private void Awake()
     {
@@ -22,6 +25,7 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator ToggleState()
     {
+
         if(isChanging == false)
         {
             isChanging = true;
@@ -53,6 +57,7 @@ public class GameManager : MonoBehaviour
         currentState = newState;
         currentState?.OnStateEnter();
         currentStateName = newState.ToString();
+        ChangeImgButtom();
     }
 
     private void Update() 
@@ -72,5 +77,19 @@ public class GameManager : MonoBehaviour
         }
 
         return false;
+    }
+    public void ChangeImgButtom()
+    {
+        if (currentState == slayerState)
+        {
+            TownImg.SetActive(true);
+            SwordImg.SetActive(false);
+        }
+        else
+        {
+            TownImg.SetActive(false);
+            SwordImg.SetActive(true);
+        }
+
     }
 }
