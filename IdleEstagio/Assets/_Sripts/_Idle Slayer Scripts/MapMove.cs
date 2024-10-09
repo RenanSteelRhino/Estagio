@@ -9,11 +9,6 @@ public class MapMove : MoveBase
     private float spriteSize;
     public float offset = 0;
 
-    public void SetIsMoving(bool value)
-    {
-        isMoving = value;
-    }
-
     private void Awake() 
     {
         _cam = Camera.main;
@@ -39,7 +34,9 @@ public class MapMove : MoveBase
         for (int i = 0; i < renderes.Count; i++)
         {
             renderes[i].transform.Translate(Vector2.left * speed * Time.deltaTime);
-            ResetPositionX(renderes[i]);
+
+            if(renderes[i] != null)
+                ResetPositionX(renderes[i]);
         }
             
     }

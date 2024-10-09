@@ -9,15 +9,17 @@ public class EnemySpawnManager : MonoBehaviour
     [SerializeField] private Transform spawnPoint;
     [SerializeField] private float spawnDuration = 5;
     private MyTimer spawnTimer;
+    public static EnemySpawnManager instance;
 
     private void Awake() 
     {
+        instance = this;
         spawnTimer = new MyTimer();
         spawnTimer.InitializeTimer(spawnDuration, true);
         spawnTimer.OnTimerEnd += SpawnEnemy;
     }    
 
-    private void Update() 
+    public void TickTimer() 
     {
         spawnTimer.TickTimer(Time.deltaTime);
     }

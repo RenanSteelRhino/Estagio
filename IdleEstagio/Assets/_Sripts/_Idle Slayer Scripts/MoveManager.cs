@@ -26,11 +26,6 @@ public class MoveManager : MonoBehaviour
         PlayerSlayer.CanMove += SetAllMovement;
     }
 
-    private void Start() 
-    {
-        SetAllMovement(true);
-    }
-
     public void SetAllMovement(bool isMoving)
     {
         this.isMoving = isMoving;
@@ -38,8 +33,5 @@ public class MoveManager : MonoBehaviour
         {
             allMovableEntities[i].SetIsMoving(isMoving);
         }
-
-
-        Debug.Log("List Count = " + allMovableEntities.Count);
     }
 }

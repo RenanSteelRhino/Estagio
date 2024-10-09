@@ -8,12 +8,15 @@ public class CameraDrag : MonoBehaviour
     public bool _isDragging;
     Camera mainCamera;
     private Vector3 CurrentMousePos => mainCamera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+    public static CameraDrag instance;
 
-    private void Awake() {
+    private void Awake() 
+    {
         mainCamera = Camera.main;
+        instance = this;
     }
 
-    private void Update() 
+    public void CheckIfIsPossibleToDrag() 
     {
         if(Input.GetMouseButtonDown(0))
         {
@@ -22,10 +25,7 @@ public class CameraDrag : MonoBehaviour
         }
         else if(Input.GetMouseButtonUp(0))
             _isDragging = false;
-    }
 
-    private void LateUpdate() 
-    {
         if(!_isDragging) return;
         _direction = CurrentMousePos - transform.position;
         transform.position = _clickOrigin - _direction;
